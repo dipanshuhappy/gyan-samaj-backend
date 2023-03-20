@@ -19,7 +19,7 @@ const chatGPT = new ChatGPTAPI({
 const app: Express = express();
 const port = process.env.PORT;
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(fileUpload());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
