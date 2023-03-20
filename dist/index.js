@@ -1,5 +1,6 @@
 import express from "express";
 import fetch from "cross-fetch";
+import cors from "cors";
 import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
@@ -12,6 +13,7 @@ const chatGPT = new ChatGPTAPI({
 });
 const app = express();
 const port = process.env.PORT;
+app.use(cors({ origin: "*" }));
 app.use(fileUpload());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
